@@ -2,19 +2,18 @@
 
 ## 📊 O que o projeto oferece?
 
-- **Classificação**: Veja a posição dos times nas ligas, junto com pontos, vitórias, empates e derrotas.
-- **Artilheiros**: Descubra quem são os principais goleadores e suas médias de gols por jogo.
-- **Próximos Jogos**: Fique por dentro das próximas partidas e seus horários.
-- **Últimos Resultados**: Confira os resultados mais recentes das partidas.
+- **Classificação**: Veja a posição dos times nas ligas **La Liga** e **Premier League**, junto com pontos, vitórias, empates e derrotas.
+- **Artilheiros**: Descubra quem são os principais goleadores das ligas **La Liga** e **Premier League** e suas médias de gols por jogo.
+- **Próximos Jogos**: Fique por dentro das próximas partidas da **La Liga** e **Premier League**.
+- **Últimos Resultados**: Confira os resultados mais recentes das partidas das ligas **La Liga** e **Premier League**.
 
 ## 🚀 Tecnologias Utilizadas
 
-- **Streamlit**: Para criar a interface web interativa.
-- **Pandas**: Para manipulação e análise de dados.
-- **Plotly**: Para visualizações interativas.
-- **Requests**: Para fazer chamadas à API de dados de futebol.
-- **dotenv**: Para gerenciar variáveis de ambiente.
+- **Streamlit**: Iinterface web interativa.
+- **Pandas**: Manipulação e análise de dados.
+- **Plotly**: Visualizações interativas.
+- **Requests**: Chamadas à API de dados de futebol.
 
 ## Acesse o App
 
-[Scoreboardanalytics](https://scoreboardanalytics-hie5gdncdjywsyxqp9buss.streamlit.app).
+[ScoreboardAnalytics](https://scoreboardanalytics-hie5gdncdjywsyxqp9buss.streamlit.app)
