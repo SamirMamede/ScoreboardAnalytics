@@ -3,10 +3,6 @@ import pandas as pd
 import requests
 import plotly.express as px
 from datetime import datetime, timedelta
-from dotenv import load_dotenv
-import os
-
-load_dotenv()
 
 st.set_page_config(page_title="ScoreboardAnalytics", layout="wide")
 
@@ -15,22 +11,33 @@ headers = {'X-Auth-Token': API_KEY}
 
 COMPETITIONS = {
     'Premier League': {'id': 2021, 'country': 'England'},
-    'La Liga': {'id': 2014, 'country': 'Spain'},
-    'Italy Serie A': {'id': 2019, 'country': 'Italy'},
-    'Bundesliga': {'id': 2002, 'country': 'Germany'}
+    'La Liga': {'id': 2014, 'country': 'Spain'}
 }
 
 @st.cache_data(ttl=3600)
 def get_competition_info(competition_id):
     url = f'http://api.football-data.org/v4/competitions/{competition_id}'
-    response = requests.get(url, headers=headers)
-    return response.json()
-
+    try:
+        response = requests.get(url, headers=headers)
+        response.raise_for_status()
+        return response.json()
+    except requests.exceptions.RequestException as e:
+        st.error(f"Erro ao buscar dados da competição: {e}")
+        return None
+    
 @st.cache_data(ttl=1800)
 def get_standings(competition_id):
     url = f'http://api.football-data.org/v4/competitions/{competition_id}/standings'
-    response = requests.get(url, headers=headers)
-    return response.json()
+    try:
+        response = requests.get(url, headers=headers)
+        response.raise_for_status()
+        if response.status_code == 429:
+            st.error("Limite de requisições atingido. Tente novamente mais tarde.")
+            return None
+        return response.json()
+    except requests.exceptions.RequestException as e:
+        st.error(f"Erro ao buscar classificação: {e}")
+        return None
 
 @st.cache_data(ttl=1800)
 def get_matches(competition_id, status='SCHEDULED'):
