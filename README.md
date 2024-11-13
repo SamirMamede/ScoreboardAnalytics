@@ -14,3 +14,7 @@
 - **Plotly**: Para visualizações interativas.
 - **Requests**: Para fazer chamadas à API de dados de futebol.
 - **dotenv**: Para gerenciar variáveis de ambiente.
+
+## Acesse o App
+
+[Scoreboardanalytics](https://scoreboardanalytics-hie5gdncdjywsyxqp9buss.streamlit.app).
