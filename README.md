@@ -9,7 +9,7 @@
 
 ## 🚀 Tecnologias Utilizadas
 
-- **Streamlit**: Iinterface web interativa.
+- **Streamlit**: Interface web interativa.
 - **Pandas**: Manipulação e análise de dados.
 - **Plotly**: Visualizações interativas.
 - **Requests**: Chamadas à API de dados de futebol.
