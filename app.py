@@ -10,7 +10,7 @@ load_dotenv()
 
 st.set_page_config(page_title="ScoreboardAnalytics", layout="wide")
 
-API_KEY = os.getenv('FOOTBALL_API_KEY')
+API_KEY = st.secrets["FOOTBALL_API_KEY"]
 headers = {'X-Auth-Token': API_KEY}
 
 COMPETITIONS = {
